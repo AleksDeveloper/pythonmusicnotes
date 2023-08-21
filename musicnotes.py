@@ -63,8 +63,6 @@ def cound_nested_dicts(d):
 def is_in_use(name, option):
     for song_id, song_name in songs.items():
         if song_name['name'] == name:
-            print("found:", song_name)
-            print("id: ", song_id)
             if option == 1:
                 return True
             if option == 2:
@@ -97,14 +95,10 @@ def play_notes(save):
                 note1 = notes[0]
                 modifier = notes[1]
                 initial_index = int(all_notes.index(note1))
-                print(note1, modifier, initial_index)
                 concat.append(note1)
-                print(get_correct_index(initial_index, get_semitones1(modifier)))
                 note2 = all_notes[get_correct_index(
                     initial_index, get_semitones1(modifier))]
                 concat.append(note2)
-                print(get_correct_index(get_correct_index(initial_index,
-                      get_semitones1(modifier)), get_semitones2(modifier)))
                 note3 = all_notes[get_correct_index(get_correct_index(
                     initial_index, get_semitones1(modifier)), get_semitones2(modifier))]
                 concat.append(note3)
@@ -112,14 +106,12 @@ def play_notes(save):
 
                 if save == 1:
                     notelists.append(concat)
-                    print(notelists)
             else:
                 try:
                     print(all_notes[all_notes.index((note.strip()))])
                     if save == 1:
                         notelists.append(
                             all_notes[all_notes.index((note.strip()))])
-                        print(notelists)
                 except Exception as e:
                     print("This does not exist", str(e))
         except Exception as e:
