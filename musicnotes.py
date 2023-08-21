@@ -64,7 +64,7 @@ minor:     base note + 3semitones + 4semitones
 augmented: base note + 4semitones + 4semitones
 """
 
-import time
+from time import sleep
 
 
 all_notes = ["do", "do#", "re", "re#", "mi",
@@ -207,9 +207,9 @@ def play_song():
     print("\n*****This is play song*****\n")
     search = input("Which song do you want to play?\n")
     if is_in_use(search, 2) is not False:
-        for item in songs[is_in_use(search, 2)]['notes']:
+        for item in songs[is_in_use(search, 2)]['notes']: #loops through the songx key of the name found in the notes value
             print(item)
-            time.sleep(1)
+            sleep(1)
     else:
         print(search, "does not exist, please try with another song or save it.")
 
