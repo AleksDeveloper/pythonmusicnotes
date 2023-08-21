@@ -1,4 +1,4 @@
-#### MUSIC NOTES IN PYTHON
+## MUSIC NOTES IN PYTHON
 
 Create a code where the user can play the different type of musical chords
 the user can save a song (multiple chords) and play the song
